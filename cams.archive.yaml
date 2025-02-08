@@ -1,0 +1,44 @@
+definitions:
+  name: Run example
+  sections:
+    Run:
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.Process
+        - nomad.datamodel.data.EntryData
+      quantities:
+        run_name:
+          type: str
+          description: Name of the run
+          default: ''
+        project:
+          type: str
+          description: Project of the run
+          default: ''
+        workpackage:
+          type: str
+          description: some description
+          default: ''
+        run_description:
+          type: str
+          description: Description of the run
+          default: ''
+        author:
+          type: str
+          description: Author of the run
+          default: ''
+        cost_model:
+          type: str
+          description: some Cost model description
+          default: ''
+        start_date:
+          type: str
+          description: Start date of the run
+          default: ''
+        generated_on:
+          type: str
+          description: Date of the generation of the report
+          default: ''
+         # step subsection is alredy implemented in the superclass (base section) 'Process' 
+      #subsection:
+       # repeats: True
+        #section: '#/Step'
