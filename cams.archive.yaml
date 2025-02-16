@@ -42,3 +42,107 @@ definitions:
       #subsection:
        # repeats: True
         #section: '#/Step'
+
+    Header:
+      quantities:
+        step_number:
+          type: int
+          description: Step number
+          default: 0
+        step_type:
+          type: str
+          description: Type of the step
+          default: ''
+        description:
+          type: str
+          description: Description of the step
+          default: ''
+
+    GeneralParameters:
+      quantities:
+        description:
+          type: str
+          description: Description of the step
+          default: ''
+        operator:
+          type: str
+          description: Operator of the step
+          default: ''
+        wafers:
+          type: str
+          description: Number of wafers
+          default: ''
+        planned_date:
+          type: str
+          description: Planned date of the step
+          default: ''
+        done:
+          type: bool
+          description: Done?
+        run_name:
+          type: str
+          description: Name of the run the step belongs to
+          default: ''
+    
+    Comments:
+      quantities:
+        important_notes:
+          type: str
+          description: Important Notes, read carefully
+          default: ''
+        comments_before_process:
+          type: str
+          description: Comments and advices to know before realizing the step
+          default: ''
+        comments_after_process:
+          type: str
+          description: Comments after the step has been realized
+          default: ''
+
+    RoomInformation:
+      quantities:
+        room:   
+          type: str
+          description: The room where the step took place
+          default: ''
+        room_comments:
+          type: str
+          description: Additional info about the room
+          default: ''
+
+    TimingInformation:
+      quantities:
+        operator_start_time:
+          type: str
+          description: operator start time
+          default: '' 
+        operator_end_time:
+          type: str
+          description: operator end time
+          default: '' 
+        equipment_start_time:
+          type: str
+          description: equipment start time
+          default: '' 
+        equipment_end_time:
+          type: str
+          description: equipment end time
+          default: '' 
+
+    StepGeneric:
+      base_sections:
+        - nomad.datamodel.metainfo.basesections.ProcessStep
+        - nomad.datamodel.data.EntryData
+      sub_sections:
+        header:
+          section: '#/Header'
+        general_parameters:
+          section: '#/GeneralParameters'
+        comments:
+          section: '#/Comments'
+        room:
+          section: '#/RoomInformation'
+        time:
+          section: '#/TimingInformation'
+        
+
